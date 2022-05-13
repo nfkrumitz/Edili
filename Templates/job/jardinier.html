@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Macons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  {% load static %}
+  <style media="screen">
+  #base {background-image: url('/static/backg.png');}
+  #ti {color: white; font-family: sans-serif; font-display: block; font-size: 40px; text-align: center;}
+  .member{text-align: right; margin-right: 45px}
+  #lo {color: white; font-weight: bold; margin-right: 20px;}
+  #co {color: white; font-weight: bold;}
+  h3 {color: limegreen; text-align: center; }
+  h5 {color: white; text-align: center;}
+  .grid-container {
+display: grid;
+grid-template-columns: auto;
+background-color: white;
+padding: 5px;
+margin-left: 350px;
+margin-right: 350px;
+border: 3px;
+width: 600px;
+height: 50px;
+top: 20px;
+}
+.grid-item {
+background-color: white;
+border: 5px solid rgba(0, 0, 0, 0.2);
+padding: 20px;
+text-align: center;
+}
+
+body {background-color: gainsboro;}
+.co{margin-left: -100px; }
+.ci{margin-left: -170px;}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+  </style>
+  <body>
+    <footer id="base">
+    <h1 id="ti">E-dili</h2>
+    <h5>Ihuriro Ry'impano</h5>
+    <div class="member">
+    <a href="{% url 'home' %}" id="lo">Accueil</a>
+    <!-- a href="{% url 'login' %}" target="_blank" id="co">Se connecter</a -->
+    </div>
+    </footer>
+    <h3>Embaucher un Jardinier</h3>
+
+    </form>
+    <div class="grid-container">
+  <div class="grid-item">
+      Sur cette page vous pouver commander un jardinier
+      <form method="post">
+        {% csrf_token %}
+         {{form.as_p}}
+        <br>
+        <button type="submit" name="button">Commander</button>
+      </form>
+  </div>
+  </div>
+  </body>
+</html >
