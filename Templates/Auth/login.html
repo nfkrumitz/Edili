@@ -1,0 +1,252 @@
+<!-- DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a81368914c.js">
+
+    </script>
+  </head>
+  {% load static %}
+  <style media="screen">
+  #base {background-image: url('static/backg.png');}
+  #ti {color: white; font-family: sans-serif; font-display: block; font-size: 40px; text-align: center;}
+  .member{text-align: right; margin-right: 45px}
+  #lo {color: white; font-weight: bold; margin-right: 20px;}
+  #co {color: white; font-weight: bold;}
+  h5 {color: white; text-align: center;}
+
+  *{padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+
+   .container{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+   }
+
+   .container:before{
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(-45deg, cyan, #04befe);
+     top: -15%;
+     right: 48%;
+     left: 10px;
+     transform: translateY(-50%);
+   }
+
+   .forms-container{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+   }
+
+   form {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+   }
+
+   .title {
+     font-size: 2.2rem;
+     color: #444;
+     margin-bottom: 10px;
+   }
+
+   .phone{
+     margin-top: -25px;
+     margin-left: 120px;
+   }
+
+   .pass{
+     margin-top: -25px;
+     margin-left: 120px;
+   }
+
+   .input-field {
+     max-width: 360px;
+     width: 100%
+     height: 55px;
+     margin: 15px 0;
+     border-radius: 55px;
+   }
+
+   .btn {
+     width: 150px;
+     height: 49px;
+     border: none;
+     outline: none;
+     border-radius: 49px;
+     cursor: pointer;
+     background-color: limegreen;
+     font-weight: 600;
+     margin: 10px 0;
+     margin-left: 70px;
+     transition: .5s;
+   }
+
+   .btn:hover{
+     background-color: cyan;
+   }
+
+  </style>
+  <body>
+    <header id="base">
+    <footer id="base">
+    <h1 id="ti">E-dili</h2>
+    <h5>Ihuriro Ry'impano</h5>
+    <div class="member">
+    <a href="{% url 'home' %}" id="lo">Accueil</a>
+    <a href="{% url 'commander' %}" id="co">Embaucher</a>
+    </div>
+    </header>
+
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="" action="index.html" method="post">
+            <h2 class="title">Sign In</h2>
+
+            <div class="input-field">
+              <i class="fas fa-mobile"></i>
+              <label for="">Phone +257 </label><div class="phone">{{form.username}}</div>
+            </div>
+
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <label for="">Password</label><div class="pass">{{form.password}}</div>
+            </div>
+            <button type="submit" name="button" class="btn">Se Connecter</button>
+            <p class="social-text">Pas de compte ? <a href="{% url 'register' %}">S'inscrire</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <! h3>Se Connecter</h3>
+
+    </form>
+    <div class="grid-container">
+  <div class="grid-item">
+    <form method="post">
+      {% csrf_token %}
+        <label for="" class="co">Numero de Telephone</label>  {{form.username}}<br><br>
+        <label for="" class="ci">Mot de Passe</label> {{form.password}}<br><br>
+        <button type="submit" name="button" class="button button1">Se connecter</button> <br>
+        Pas de compte ? <a href="{% url 'register' %}"> S'enregistrer</a>
+  </div>
+  </div>
+  <div cla >
+  <script type="text/javascript" src="static/js/main.js">
+
+  </script>
+  </body>
+</html -->
+
+
+
+<!-- DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="static/css/home.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="static/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="static/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="" method="POST">
+        {% csrf_token %}
+				<img src="static/avatar.svg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Numero de Téléphone</h5>{{form.username}}
+
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>{{form.password}}
+
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" type="text/css" href="static/css/home.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="static/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="static/bg.svg">
+		</div>
+		<div class="login-content">
+			<form method="post">
+        {% csrf_token %}
+				<img src="static/avatar.svg">
+				<h2 class="title">Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-phone"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5></h5>{{form.username}}
+
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i">
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5></h5>{{form.password}}
+            	   </div>
+            	</div>pas de compte ? <a href="{% url 'register' %}"> S'enregistrer</a>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/main.js"></script>
+</body>
+</html>
